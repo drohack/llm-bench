@@ -2,6 +2,19 @@
 
 Benchmarks for local LLM and NVIDIA NIM inference with Claude Code.
 
+## Getting Started (what you need to change)
+
+1. **NVIDIA API key** — copy `.env.example` to `.env` and add your key (free at [build.nvidia.com](https://build.nvidia.com)):
+   ```
+   NVIDIA_API_KEY=your-nvidia-api-key
+   ```
+2. **Python dependencies** — install into a venv:
+   ```bash
+   python -m venv .venv
+   .venv/Scripts/pip install httpx openai evalplus python-dotenv
+   ```
+3. **Local bench** — requires llama-server running on `:8081` and [llama-cpp-local](https://github.com/drohack/llama-cpp-local) as a sibling directory (for `tune_ncpu.py` / `verify_vram_256k.py` fixture paths)
+
 ## Structure
 
 ```
