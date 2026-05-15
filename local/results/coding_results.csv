@@ -1,0 +1,1626 @@
+"model","problem","difficulty","passed","latency_s","error","generated_code"
+"qwen3.6-35b-iq4xs","fizzbuzz","easy","True","12.1","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq4xs","is_palindrome","easy","True","39.3","","def is_palindrome(s):
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq4xs","two_sum","easy","True","41.6","","def two_sum(nums, target):
+    """"""
+    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+    You may assume that each input would have exactly one solution, and you may not use the same element twice.
+    You can return the answ"
+"qwen3.6-35b-iq4xs","flatten_list","easy","True","10.0","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq4xs","binary_search","medium","True","3.3","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq4xs","merge_intervals","medium","True","50.1","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort intervals by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = []
+    for interval in intervals:
+        # If the merged list is empty or if the current interval does not overlap
+        # with "
+"qwen3.6-35b-iq4xs","longest_common_prefix","medium","True","47.6","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    # Start with the first string as the prefix
+    prefix = strs[0]
+    
+    for s in strs[1:]:
+        # Shorten the prefix until it's a prefix of s
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+   "
+"qwen3.6-35b-iq4xs","valid_parentheses","medium","True","3.4","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            st"
+"qwen3.6-35b-iq4xs","lru_cache","hard","True","74.5","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.order.remove(key)
+            self.order.append(key)
+            return self.cac"
+"qwen3.6-35b-iq4xs","word_ladder","hard","True","74.3","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    from collections import deque
+    queue = deque([(begin, 1)])
+    visited = {begin}
+    
+    while queue:
+        current_word, length = queue.popleft()
+        if current_word"
+"qwen3.6-35b-iq3xxs","fizzbuzz","easy","True","6.6","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq3xxs","is_palindrome","easy","True","1.5","","def is_palindrome(s):
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq3xxs","two_sum","easy","False","7.3","SyntaxError: invalid syntax (<unknown>, line 23)","def two_sum(nums, target):
+    """"""
+    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+    
+    Args:
+        nums: List[int] "
+"qwen3.6-35b-iq3xxs","flatten_list","easy","True","22.4","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq3xxs","binary_search","medium","True","18.0","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq3xxs","merge_intervals","medium","True","12.0","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = []
+    for interval in intervals:
+        # If the merged list is empty or there's no overlap
+        if not merged or merged[-1][1] < interv"
+"qwen3.6-35b-iq3xxs","longest_common_prefix","medium","True","4.5","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    # Start with the first string as the prefix
+    prefix = strs[0]
+    
+    for s in strs[1:]:
+        # Shorten the prefix until it's a prefix of s
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+   "
+"qwen3.6-35b-iq3xxs","valid_parentheses","medium","True","28.7","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            st"
+"qwen3.6-35b-iq3xxs","lru_cache","hard","True","34.6","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.order.remove(key)
+            self.order.append(key)
+            return self.cac"
+"qwen3.6-35b-iq3xxs","word_ladder","hard","True","7.1","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    from collections import deque
+    queue = deque([(begin, 1)])
+    visited = {begin}
+    
+    while queue:
+        current_word, length = queue.popleft()
+        if current_word"
+"qwen3.5-122b-iq2xxs","fizzbuzz","easy","True","50.6","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append(""FizzBuzz"")
+        elif i % 3 == 0:
+            result.append(""Fizz"")
+        elif i % 5 == 0:
+            result.append(""Buzz"")
+        else:
+            result.append(str"
+"qwen3.5-122b-iq2xxs","is_palindrome","easy","True","45.8","","def is_palindrome(s):
+    cleaned = ''.join(char.lower() for char in s if char.isalnum())
+    return cleaned == cleaned[::-1]"
+"qwen3.5-122b-iq2xxs","two_sum","easy","True","160.5","","def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i"
+"qwen3.5-122b-iq2xxs","flatten_list","easy","True","99.2","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.5-122b-iq2xxs","binary_search","medium","True","102.4","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.5-122b-iq2xxs","merge_intervals","medium","True","17.0","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort intervals by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last_merged = merged[-1]
+        
+        # Check if current interval"
+"qwen3.5-122b-iq2xxs","longest_common_prefix","medium","True","189.9","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    prefix = strs[0]
+    
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    
+    return prefix"
+"qwen3.5-122b-iq2xxs","valid_parentheses","medium","True","190.7","","def is_valid(s):
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            if not stack or stack[-1] != mapping[char]:
+                return False
+            stack.pop()
+        else:
+            stack.append(char)
+    
+    return n"
+"qwen3.5-122b-iq2xxs","lru_cache","hard","True","28.1","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.order.remove(key)
+            self.order.append(key)
+            return self.cac"
+"qwen3.5-122b-iq2xxs","word_ladder","hard","True","23.5","","def word_ladder(begin, end, word_list):
+    if begin == end:
+        return 1
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    from collections import deque
+    queue = deque([(begin, 1)])
+    visited = {begin}
+    while queue:
+        current, steps = queue.popleft()
+ "
+"qwen3.5-122b-iq2xxs","fizzbuzz","easy","True","19.7","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 15 == 0:
+            result.append(""FizzBuzz"")
+        elif i % 3 == 0:
+            result.append(""Fizz"")
+        elif i % 5 == 0:
+            result.append(""Buzz"")
+        else:
+            result.append(str(i))
+    retur"
+"qwen3.5-122b-iq2xxs","is_palindrome","easy","True","23.2","","def is_palindrome(s):
+    cleaned = ''.join(char.lower() for char in s if char.isalnum())
+    return cleaned == cleaned[::-1]"
+"qwen3.5-122b-iq2xxs","two_sum","easy","True","51.0","","def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i"
+"qwen3.5-122b-iq2xxs","flatten_list","easy","True","891.8","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.5-122b-iq2xxs","binary_search","medium","True","18.4","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.5-122b-iq2xxs","merge_intervals","medium","True","137.1","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort intervals by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last_merged = merged[-1]
+        
+        # Check if current interval"
+"qwen3.5-122b-iq2xxs","longest_common_prefix","medium","True","47.8","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    prefix = strs[0]
+    
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    
+    return prefix"
+"qwen3.5-122b-iq2xxs","valid_parentheses","medium","True","49.3","","def is_valid(s):
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            if not stack or stack[-1] != mapping[char]:
+                return False
+            stack.pop()
+        else:
+            stack.append(char)
+    
+    return n"
+"qwen3.5-122b-iq2xxs","lru_cache","hard","True","57.3","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.order.remove(key)
+            self.order.append(key)
+            return self.cac"
+"qwen3.5-122b-iq2xxs","word_ladder","hard","True","170.7","","def word_ladder(begin, end, word_list):
+    if end not in word_list:
+        return 0
+    
+    word_set = set(word_list)
+    if begin not in word_set:
+        word_set.add(begin)
+    
+    from collections import deque
+    
+    queue = deque([(begin, 1)])
+    visited = {begin}
+    
+    while queue:
+ "
+"llama4-scout-iq2xxs","fizzbuzz","easy","True","68.4","","def fizzbuzz(n):
+    return ['FizzBuzz' if i % 15 == 0 else 'Fizz' if i % 3 == 0 else 'Buzz' if i % 5 == 0 else str(i) for i in range(1, n+1)]"
+"llama4-scout-iq2xxs","is_palindrome","easy","True","71.8","","def is_palindrome(s: str) -> bool:
+    s = ''.join(c for c in s if c.isalnum()).lower()
+    return s == s[::-1]"
+"llama4-scout-iq2xxs","two_sum","easy","True","42.8","","def two_sum(nums, target):
+    num_dict = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_dict:
+            return [num_dict[complement], i]
+        num_dict[num] = i
+    return []"
+"llama4-scout-iq2xxs","flatten_list","easy","True","225.7","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"llama4-scout-iq2xxs","binary_search","medium","True","163.1","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"llama4-scout-iq2xxs","merge_intervals","medium","True","162.8","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+
+    intervals.sort(key=lambda x: x[0])
+    merged = [intervals[0]]
+
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            merged[-1] = [last[0], max(last[1], current[1])]
+    "
+"llama4-scout-iq2xxs","longest_common_prefix","medium","True","501.0","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    shortest_str = min(strs, key=len)
+    
+    for i, char in enumerate(shortest_str):
+        for other in strs:
+            if other[i] != char:
+                return shortest_str[:i]
+    
+    return shortest_str"
+"llama4-scout-iq2xxs","valid_parentheses","medium","True","401.2","","def is_valid(s: str) -> bool:
+    stack = []
+    bracket_map = {')': '(', '}': '{', ']': '['}
+
+    for char in s:
+        if char in bracket_map.values():
+            stack.append(char)
+        elif char in bracket_map.keys():
+            if not stack or stack.pop() != bracket_map[char]:
+           "
+"llama4-scout-iq2xxs","lru_cache","hard","True","409.6","","from collections import OrderedDict
+
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = OrderedDict()
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            value = self.cache.pop(key)
+            self.cache[key] = val"
+"llama4-scout-iq2xxs","word_ladder","hard","True","32.4","","from collections import deque
+
+def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    queue = deque([(begin, 1)])
+    visited = {begin}
+    
+    while queue:
+        word, steps = queue.popleft()
+        if word == end:
+           "
+"llama4-scout-iq2xxs","fizzbuzz","easy","True","31.2","","def fizzbuzz(n):
+    return ['FizzBuzz' if i % 15 == 0 else 'Fizz' if i % 3 == 0 else 'Buzz' if i % 5 == 0 else str(i) for i in range(1, n+1)]"
+"llama4-scout-iq2xxs","is_palindrome","easy","True","87.6","","def is_palindrome(s: str) -> bool:
+    s = ''.join(c for c in s if c.isalnum()).lower()
+    return s == s[::-1]"
+"llama4-scout-iq2xxs","two_sum","easy","True","9.0","","def two_sum(nums, target):
+    num_dict = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_dict:
+            return [num_dict[complement], i]
+        num_dict[num] = i
+    return []"
+"llama4-scout-iq2xxs","flatten_list","easy","True","7.7","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"llama4-scout-iq2xxs","binary_search","medium","True","12.8","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"llama4-scout-iq2xxs","merge_intervals","medium","True","12.9","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+
+    intervals.sort(key=lambda x: x[0])
+    merged = [intervals[0]]
+
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            merged[-1] = [last[0], max(last[1], current[1])]
+    "
+"llama4-scout-iq2xxs","longest_common_prefix","medium","True","9.5","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+
+    shortest_str = min(strs, key=len)
+
+    for i, char in enumerate(shortest_str):
+        for other in strs:
+            if other[i] != char:
+                return shortest_str[:i]
+
+    return shortest_str"
+"llama4-scout-iq2xxs","valid_parentheses","medium","True","11.6","","def is_valid(s: str) -> bool:
+    stack = []
+    bracket_map = {')': '(', '}': '{', ']': '['}
+
+    for char in s:
+        if char in bracket_map.values():
+            stack.append(char)
+        elif char in bracket_map.keys():
+            if not stack or stack.pop() != bracket_map[char]:
+           "
+"llama4-scout-iq2xxs","lru_cache","hard","True","18.8","","from collections import OrderedDict
+
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = OrderedDict()
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            value = self.cache.pop(key)
+            self.cache[key] = val"
+"llama4-scout-iq2xxs","word_ladder","hard","True","19.9","","from collections import deque
+
+def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    queue = deque([(begin, 1)])
+    visited = {begin}
+    
+    while queue:
+        word, steps = queue.popleft()
+        if word == end:
+           "
+"qwen3.6-35b-iq4xs","fizzbuzz","easy","True","82.1","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq4xs","is_palindrome","easy","True","100.9","","def is_palindrome(s):
+    # Filter out non-alphanumeric characters and convert to lowercase
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    # Check if the cleaned string reads the same forwards and backwards
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq4xs","two_sum","easy","True","2.9","","def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i"
+"qwen3.6-35b-iq4xs","flatten_list","easy","True","2.5","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq4xs","binary_search","medium","True","3.8","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq4xs","merge_intervals","medium","True","5.0","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            # Overlapping i"
+"qwen3.6-35b-iq4xs","longest_common_prefix","medium","True","3.9","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    # Start with the first string as the prefix
+    prefix = strs[0]
+    
+    for s in strs[1:]:
+        # Shorten the prefix until it matches the start of the current string
+        while not s.startswith(prefix):
+            "
+"qwen3.6-35b-iq4xs","valid_parentheses","medium","True","3.8","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            stack.a"
+"qwen3.6-35b-iq4xs","lru_cache","hard","True","8.3","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []  # To track usage order, most recent at the end
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            # Move to most recently used
+        "
+"qwen3.6-35b-iq4xs","word_ladder","hard","True","7.3","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    # BFS
+    queue = [(begin, 1)]
+    visited = {begin}
+    
+    while queue:
+        current_word, level = queue.pop(0)
+        
+        if current_word == end:
+            retur"
+"qwen3.5-122b-iq2xxs","fizzbuzz","easy","True","12.3","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append(""FizzBuzz"")
+        elif i % 3 == 0:
+            result.append(""Fizz"")
+        elif i % 5 == 0:
+            result.append(""Buzz"")
+        else:
+            result.append(str"
+"qwen3.5-122b-iq2xxs","is_palindrome","easy","True","5.8","","def is_palindrome(s):
+    cleaned = ''.join(char.lower() for char in s if char.isalnum())
+    return cleaned == cleaned[::-1]"
+"qwen3.5-122b-iq2xxs","two_sum","easy","True","7.5","","def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i"
+"qwen3.5-122b-iq2xxs","flatten_list","easy","True","6.6","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.5-122b-iq2xxs","binary_search","medium","True","9.8","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.5-122b-iq2xxs","merge_intervals","medium","True","14.9","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort intervals by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last_merged = merged[-1]
+        
+        # Check if current interval"
+"qwen3.5-122b-iq2xxs","longest_common_prefix","medium","True","8.5","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    prefix = strs[0]
+    
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    
+    return prefix"
+"qwen3.5-122b-iq2xxs","valid_parentheses","medium","True","9.4","","def is_valid(s):
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            if not stack or stack[-1] != mapping[char]:
+                return False
+            stack.pop()
+        else:
+            stack.append(char)
+    
+    return n"
+"qwen3.5-122b-iq2xxs","lru_cache","hard","True","17.3","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.order.remove(key)
+            self.order.append(key)
+            return self.cac"
+"qwen3.5-122b-iq2xxs","word_ladder","hard","True","17.7","","def word_ladder(begin, end, word_list):
+    if begin == end:
+        return 1
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    from collections import deque
+    queue = deque([(begin, 1)])
+    visited = {begin}
+    while queue:
+        current, steps = queue.popleft()
+ "
+"qwen3.6-35b-iq4xs","fizzbuzz","easy","True","5.3","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq4xs","is_palindrome","easy","True","2.8","","def is_palindrome(s):
+    # Filter out non-alphanumeric characters and convert to lowercase
+    cleaned = [c.lower() for c in s if c.isalnum()]
+    # Check if the cleaned list reads the same forwards and backwards
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq4xs","two_sum","easy","True","2.9","","def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i"
+"qwen3.6-35b-iq4xs","flatten_list","easy","True","2.5","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq4xs","binary_search","medium","True","4.0","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq4xs","merge_intervals","medium","True","5.0","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            # Overlapping i"
+"qwen3.6-35b-iq4xs","longest_common_prefix","medium","True","4.5","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    # Sort the list of strings
+    strs.sort()
+    
+    # Compare the first and last string in the sorted list
+    first = strs[0]
+    last = strs[-1]
+    
+    # Find the common prefix between the first and last string
+    i = "
+"qwen3.6-35b-iq4xs","valid_parentheses","medium","True","3.6","","def is_valid(s):
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            stack.append(ch"
+"qwen3.6-35b-iq4xs","lru_cache","hard","True","8.3","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []  # To track usage order, most recent at the end
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            # Move to most recently used
+        "
+"qwen3.6-35b-iq4xs","word_ladder","hard","True","8.0","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    # BFS
+    queue = [(begin, 1)]
+    visited = {begin}
+    
+    while queue:
+        current_word, length = queue.pop(0)
+        
+        if current_word == end:
+            retu"
+"qwen3.6-35b-iq3s","fizzbuzz","easy","True","4.6","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq3s","is_palindrome","easy","True","1.7","","def is_palindrome(s):
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq3s","two_sum","easy","True","2.4","","def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i"
+"qwen3.6-35b-iq3s","flatten_list","easy","True","2.0","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq3s","binary_search","medium","True","2.9","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq3s","merge_intervals","medium","True","3.8","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort intervals by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            # Ove"
+"qwen3.6-35b-iq3s","longest_common_prefix","medium","True","2.4","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    prefix = strs[0]
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    return prefix"
+"qwen3.6-35b-iq3s","valid_parentheses","medium","True","3.0","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping.values():
+            stack.append(char)
+        elif char in mapping:
+            if not stack or stack.pop() != mapping[char]:
+                return False
+ "
+"qwen3.6-35b-iq3s","lru_cache","hard","True","9.6","","class Node:
+    def __init__(self, key=0, value=0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.head = Node()
+      "
+"qwen3.6-35b-iq3s","word_ladder","hard","True","5.5","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    # BFS initialization
+    queue = [(begin, 1)]  # (current_word, length)
+    visited = {begin}
+    
+    while queue:
+        current_word, length = queue.pop(0)
+        
+       "
+"reap-40b-i1-iq3xxs","fizzbuzz","easy","True","5.4","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 15 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str(i))
+    retur"
+"reap-40b-i1-iq3xxs","is_palindrome","easy","True","3.0","","def is_palindrome(s):
+    # Filter out non-alphanumeric characters and convert to lowercase
+    cleaned = ''.join(char.lower() for char in s if char.isalnum())
+    
+    # Check if the cleaned string is equal to its reverse
+    return cleaned == cleaned[::-1]"
+"reap-40b-i1-iq3xxs","two_sum","easy","True","3.0","","def two_sum(nums, target):
+    num_to_index = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_to_index:
+            return [num_to_index[complement], i]
+        num_to_index[num] = i"
+"reap-40b-i1-iq3xxs","flatten_list","easy","True","2.4","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"reap-40b-i1-iq3xxs","binary_search","medium","True","3.7","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"reap-40b-i1-iq3xxs","merge_intervals","medium","True","5.0","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort intervals by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = []
+    for interval in intervals:
+        # If merged list is empty or current interval doesn overlap with the last merged interval"
+"reap-40b-i1-iq3xxs","longest_common_prefix","medium","True","4.2","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    # Start with the first string as the prefix
+    prefix = strs[0]
+    
+    # Compare with each string and reduce prefix length
+    for s in strs[1:]:
+        # While current string doesn't start with prefix, shorten prefix
+ "
+"reap-40b-i1-iq3xxs","valid_parentheses","medium","True","3.5","","def is_valid(s):
+    stack = []
+    pairs = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in '([{':
+            stack.append(char)
+        elif char in ')]}':
+            if not stack or stack.pop() != pairs[char]:
+                return False
+    
+    return len(stack) == 0"
+"reap-40b-i1-iq3xxs","lru_cache","hard","True","7.5","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []
+
+    def get(self, key: int) -> int:
+        if key not in self.cache:
+            return -1
+        # Move key to most recently used position
+        self.order.re"
+"reap-40b-i1-iq3xxs","word_ladder","hard","True","7.1","","from collections import deque
+import string
+
+def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    
+    # If end word is not in word_list, no solution exists
+    if end not in word_set:
+        return 0
+    
+    # BFS
+    queue = deque([(begin, 1)])
+    visited = {begin}
+    
+   "
+"qwen3.6-35b-iq3xxs","fizzbuzz","easy","False","7.7","APIConnectionError('Connection error.')",""
+"qwen3.6-35b-iq3xxs","is_palindrome","easy","False","1.8","InternalServerError(""Error code: 503 - {'error': {'message': 'Loading model', 'type': 'unavailable_error', 'code': 503}}"")",""
+"qwen3.6-35b-iq3xxs","two_sum","easy","False","1.2","InternalServerError(""Error code: 503 - {'error': {'message': 'Loading model', 'type': 'unavailable_error', 'code': 503}}"")",""
+"qwen3.6-35b-iq3xxs","flatten_list","easy","False","1.4","InternalServerError(""Error code: 503 - {'error': {'message': 'Loading model', 'type': 'unavailable_error', 'code': 503}}"")",""
+"qwen3.6-35b-iq3xxs","binary_search","medium","False","1.5","InternalServerError(""Error code: 503 - {'error': {'message': 'Loading model', 'type': 'unavailable_error', 'code': 503}}"")",""
+"qwen3.6-35b-iq3xxs","merge_intervals","medium","False","1.3","InternalServerError(""Error code: 503 - {'error': {'message': 'Loading model', 'type': 'unavailable_error', 'code': 503}}"")",""
+"qwen3.6-35b-iq3xxs","longest_common_prefix","medium","False","1.4","InternalServerError(""Error code: 503 - {'error': {'message': 'Loading model', 'type': 'unavailable_error', 'code': 503}}"")",""
+"qwen3.6-35b-iq3xxs","valid_parentheses","medium","True","14.3","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            st"
+"qwen3.6-35b-iq3xxs","lru_cache","hard","False","13.8","InternalServerError(""Error code: 503 - {'error': {'message': 'Loading model', 'type': 'unavailable_error', 'code': 503}}"")",""
+"qwen3.6-35b-iq3xxs","word_ladder","hard","False","1.2","InternalServerError(""Error code: 503 - {'error': {'message': 'Loading model', 'type': 'unavailable_error', 'code': 503}}"")",""
+"qwen3.6-35b-iq3xxs","fizzbuzz","easy","True","3.5","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq3xxs","is_palindrome","easy","True","1.6","","def is_palindrome(s: str) -> bool:
+    cleaned = [c.lower() for c in s if c.isalnum()]
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq3xxs","two_sum","easy","True","2.1","","def two_sum(nums, target):
+    num_to_index = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_to_index:
+            return [num_to_index[complement], i]
+        num_to_index[num] = i"
+"qwen3.6-35b-iq3xxs","flatten_list","easy","True","1.7","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq3xxs","binary_search","medium","True","2.4","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq3xxs","merge_intervals","medium","True","3.6","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = []
+    for interval in intervals:
+        # If the list of merged intervals is empty or if the current interval does not overlap with the pre"
+"qwen3.6-35b-iq3xxs","longest_common_prefix","medium","True","2.1","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    prefix = strs[0]
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    return prefix"
+"qwen3.6-35b-iq3xxs","valid_parentheses","medium","True","2.5","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            st"
+"qwen3.6-35b-iq3xxs","lru_cache","hard","False","8.3","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpmjl9u_jl.py"", line 59, in <module>
+    c = LRUCache(2); c.put(1,1); c.put(2,2); assert c.get(1)==1
+                     ","class Node:
+    def __init__(self, key=0, value=0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.head = Node()
+       "
+"qwen3.6-35b-iq3xxs","word_ladder","hard","True","3.9","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    # BFS
+    queue = [(begin, 1)]
+    visited = {begin}
+    
+    while queue:
+        current_word, length = queue.pop(0)
+        
+        if current_word == end:
+            retu"
+"qwen3.6-35b-iq3xxs","fizzbuzz","easy","True","106.9","","def fizzbuzz(n):
+    return ['FizzBuzz' if i % 15 == 0 else 'Fizz' if i % 3 == 0 else 'Buzz' if i % 5 == 0 else str(i) for i in range(1, n + 1)]"
+"qwen3.6-35b-iq3xxs","is_palindrome","easy","False","16.9","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpwur8w27e.py"", line 3, in <module>
+    assert is_palindrome('racecar') == True
+           ^^^^^^^^^^^^^
+NameError: name '",""
+"qwen3.6-35b-iq3xxs","two_sum","easy","False","25.4","SyntaxError: '[' was never closed (<unknown>, line 6)","def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i"
+"qwen3.6-35b-iq3xxs","flatten_list","easy","False","31.2","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmp40_a9igs.py"", line 3, in <module>
+    assert flatten([1,[2,[3,[4]],5]]) == [1,2,3,4,5]
+           ^^^^^^^
+NameError: nam",""
+"qwen3.6-35b-iq3xxs","binary_search","medium","True","26.4","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq3xxs","merge_intervals","medium","False","30.9","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpz9z50qk7.py"", line 3, in <module>
+    assert merge_intervals([[1,3],[2,6],[8,10],[15,18]]) == [[1,6],[8,10],[15,18]]
+   ",""
+"qwen3.6-35b-iq3xxs","longest_common_prefix","medium","False","30.2","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpavoj43sx.py"", line 3, in <module>
+    assert longest_common_prefix(['flower','flow','flight']) == 'fl'
+           ^^^^^^",""
+"qwen3.6-35b-iq3xxs","valid_parentheses","medium","False","30.9","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpdrelq0tj.py"", line 3, in <module>
+    assert is_valid('()[]{}') == True
+           ^^^^^^^^
+NameError: name 'is_valid' i",""
+"qwen3.6-35b-iq3xxs","lru_cache","hard","False","30.9","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmp30j6dzzd.py"", line 3, in <module>
+    c = LRUCache(2); c.put(1,1); c.put(2,2); assert c.get(1)==1
+        ^^^^^^^^
+NameE",""
+"qwen3.6-35b-iq3xxs","word_ladder","hard","False","30.9","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmp6d72zte6.py"", line 3, in <module>
+    assert word_ladder('hit','cog',['hot','dot','dog','lot','log','cog']) == 5
+       ",""
+"qwen3.6-35b-iq3xxs","fizzbuzz","easy","True","24.6","","def fizzbuzz(n):
+    return ['FizzBuzz' if i % 15 == 0 else 'Fizz' if i % 3 == 0 else 'Buzz' if i % 5 == 0 else str(i) for i in range(1, n + 1)]"
+"qwen3.6-35b-iq3xxs","is_palindrome","easy","False","31.7","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmphilo29ay.py"", line 3, in <module>
+    assert is_palindrome('racecar') == True
+           ^^^^^^^^^^^^^
+NameError: name '",""
+"qwen3.6-35b-iq3xxs","two_sum","easy","False","31.0","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpjhnt8oj0.py"", line 3, in <module>
+    assert two_sum([2,7,11,15], 9) == [0,1]
+           ^^^^^^^
+NameError: name 'two_su",""
+"qwen3.6-35b-iq3xxs","flatten_list","easy","False","26.3","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpv_nogfp7.py"", line 3, in <module>
+    assert flatten([1,[2,[3,[4]],5]]) == [1,2,3,4,5]
+           ^^^^^^^
+NameError: nam",""
+"qwen3.6-35b-iq3xxs","binary_search","medium","True","30.2","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq3xxs","merge_intervals","medium","False","30.9","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmppi884389.py"", line 3, in <module>
+    assert merge_intervals([[1,3],[2,6],[8,10],[15,18]]) == [[1,6],[8,10],[15,18]]
+   ",""
+"qwen3.6-35b-iq3xxs","longest_common_prefix","medium","False","30.9","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmppnjh2za4.py"", line 3, in <module>
+    assert longest_common_prefix(['flower','flow','flight']) == 'fl'
+           ^^^^^^",""
+"qwen3.6-35b-iq3xxs","valid_parentheses","medium","False","31.0","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpwrlegdxc.py"", line 3, in <module>
+    assert is_valid('()[]{}') == True
+           ^^^^^^^^
+NameError: name 'is_valid' i",""
+"qwen3.6-35b-iq3xxs","lru_cache","hard","False","31.3","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmp2t0u595u.py"", line 3, in <module>
+    c = LRUCache(2); c.put(1,1); c.put(2,2); assert c.get(1)==1
+        ^^^^^^^^
+NameE",""
+"qwen3.6-35b-iq3xxs","word_ladder","hard","False","15.9","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpo5m8b8wk.py"", line 3, in <module>
+    assert word_ladder('hit','cog',['hot','dot','dog','lot','log','cog']) == 5
+       ",""
+"qwen3.6-35b-iq3xxs","fizzbuzz","easy","True","3.6","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq3xxs","is_palindrome","easy","True","1.6","","def is_palindrome(s: str) -> bool:
+    cleaned = [c.lower() for c in s if c.isalnum()]
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq3xxs","two_sum","easy","True","2.1","","def two_sum(nums, target):
+    num_to_index = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_to_index:
+            return [num_to_index[complement], i]
+        num_to_index[num] = i"
+"qwen3.6-35b-iq3xxs","flatten_list","easy","True","1.7","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq3xxs","binary_search","medium","True","2.4","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq3xxs","merge_intervals","medium","True","3.1","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            # Overlapping i"
+"qwen3.6-35b-iq3xxs","longest_common_prefix","medium","True","2.1","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    prefix = strs[0]
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    return prefix"
+"qwen3.6-35b-iq3xxs","valid_parentheses","medium","True","2.5","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            st"
+"qwen3.6-35b-iq3xxs","lru_cache","hard","False","8.1","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmprcwkqt0f.py"", line 59, in <module>
+    c = LRUCache(2); c.put(1,1); c.put(2,2); assert c.get(1)==1
+                     ","class Node:
+    def __init__(self, key=0, value=0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.head = Node()
+       "
+"qwen3.6-35b-iq3xxs","word_ladder","hard","True","4.1","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    # BFS
+    queue = [(begin, 1)]
+    visited = {begin}
+    
+    while queue:
+        current_word, length = queue.pop(0)
+        
+        if current_word == end:
+            retu"
+"qwen3.6-35b-iq3xxs","fizzbuzz","easy","True","3.5","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq3xxs","is_palindrome","easy","True","1.6","","def is_palindrome(s: str) -> bool:
+    cleaned = [c.lower() for c in s if c.isalnum()]
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq3xxs","two_sum","easy","True","2.1","","def two_sum(nums, target):
+    num_to_index = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_to_index:
+            return [num_to_index[complement], i]
+        num_to_index[num] = i"
+"qwen3.6-35b-iq3xxs","flatten_list","easy","True","1.7","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq3xxs","binary_search","medium","True","2.4","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq3xxs","merge_intervals","medium","True","3.1","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            # Overlapping i"
+"qwen3.6-35b-iq3xxs","longest_common_prefix","medium","True","2.1","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    prefix = strs[0]
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    return prefix"
+"qwen3.6-35b-iq3xxs","valid_parentheses","medium","True","2.5","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            st"
+"qwen3.6-35b-iq3xxs","lru_cache","hard","True","3.8","","class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.order = []
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.order.remove(key)
+            self.order.append(key)
+            return self.cac"
+"qwen3.6-35b-iq3xxs","word_ladder","hard","True","3.9","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    # BFS
+    queue = [(begin, 1)]
+    visited = {begin}
+    
+    while queue:
+        current_word, length = queue.pop(0)
+        
+        if current_word == end:
+            retu"
+"qwen3.6-35b-iq3xxs","fizzbuzz","easy","True","3.6","","def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            result.append('FizzBuzz')
+        elif i % 3 == 0:
+            result.append('Fizz')
+        elif i % 5 == 0:
+            result.append('Buzz')
+        else:
+            result.append(str"
+"qwen3.6-35b-iq3xxs","is_palindrome","easy","True","1.6","","def is_palindrome(s: str) -> bool:
+    cleaned = [c.lower() for c in s if c.isalnum()]
+    return cleaned == cleaned[::-1]"
+"qwen3.6-35b-iq3xxs","two_sum","easy","True","2.1","","def two_sum(nums, target):
+    num_to_index = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_to_index:
+            return [num_to_index[complement], i]
+        num_to_index[num] = i"
+"qwen3.6-35b-iq3xxs","flatten_list","easy","True","1.7","","def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result"
+"qwen3.6-35b-iq3xxs","binary_search","medium","True","2.4","","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1"
+"qwen3.6-35b-iq3xxs","merge_intervals","medium","True","3.5","","def merge_intervals(intervals):
+    if not intervals:
+        return []
+    
+    # Sort by start time
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = []
+    for interval in intervals:
+        # If the list of merged intervals is empty or if the current interval does not overlap with the pre"
+"qwen3.6-35b-iq3xxs","longest_common_prefix","medium","True","2.1","","def longest_common_prefix(strs):
+    if not strs:
+        return """"
+    
+    prefix = strs[0]
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return """"
+    return prefix"
+"qwen3.6-35b-iq3xxs","valid_parentheses","medium","True","2.6","","def is_valid(s: str) -> bool:
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            st"
+"qwen3.6-35b-iq3xxs","lru_cache","hard","False","8.4","Traceback (most recent call last):
+  File ""C:\Users\droha\AppData\Local\Temp\tmpq400re02.py"", line 59, in <module>
+    c = LRUCache(2); c.put(1,1); c.put(2,2); assert c.get(1)==1
+                     ","class Node:
+    def __init__(self, key=0, value=0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.head = Node()
+       "
+"qwen3.6-35b-iq3xxs","word_ladder","hard","True","3.9","","def word_ladder(begin, end, word_list):
+    word_set = set(word_list)
+    if end not in word_set:
+        return 0
+    
+    # BFS
+    queue = [(begin, 1)]
+    visited = {begin}
+    
+    while queue:
+        current_word, length = queue.pop(0)
+        
+        if current_word == end:
+            retu"

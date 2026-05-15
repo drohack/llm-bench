@@ -1,0 +1,16 @@
+model,dataset,pass_at_1,elapsed_min,samples_file,score_pass@1
+qwen3.6-35b-iq4xs,humaneval,0.0,28.2,C:\Users\droha\Workspace\SaltyChart-Claude\bench\evalplus_results\qwen3.6-35b-iq4xs\humaneval\qwen3.6-35b-iq4xs_openai_temp_0.0.jsonl,0.0
+qwen3.6-35b-iq4xs,humaneval,0.0,33.4,C:\Users\droha\Workspace\SaltyChart-Claude\bench\evalplus_results\qwen3.6-35b-iq4xs\humaneval\qwen3.6-35b-iq4xs_openai_temp_0.0.jsonl,0.0
+qwen3.6-35b-iq4xs,humaneval,0.0,33.4,C:\Users\droha\Workspace\SaltyChart-Claude\bench\evalplus_results\humaneval\qwen3.6-35b-iq4xs_openai_temp_0.0.jsonl,0.0
+qwen3.6-35b-iq4xs,humaneval,0.9146341463414634,0.0
+qwen3.6-35b-iq3xxs,humaneval,0.926829268292683,17.0,C:\Users\droha\Workspace\SaltyChart-Claude\bench\evalplus_results\humaneval\qwen3.6-35b-iq3xxs_openai_temp_0.0.jsonl,0.926829268292683,0.926829268292683,0.926829268292683
+qwen3.5-122b-iq2xxs,humaneval,0.915,93.7
+qwen3.6-35b-iq3s,humaneval,0.9146341463414634,19.7,C:\Users\droha\Workspace\SaltyChart-Claude\bench\evalplus_results\humaneval\qwen3.5-122b-iq2xxs_openai_temp_0.0.jsonl,0.9146341463414634,0.9146341463414634,0.9146341463414634
+reap-40b-i1-iq3xxs,humaneval,0.8780487804878049,28.0,C:\Users\droha\Workspace\SaltyChart-Claude\bench\evalplus_results\humaneval\reap-40b-i1-iq3xxs_openai_temp_0.0.jsonl,0.8780487804878049,0.8780487804878049,0.8780487804878049
+qwen3.6-35b-iq3xxs,humaneval,0.926829268292683,0.4,C:\Users\droha\Workspace\SaltyChart-Claude\bench\local\..\evalplus_results\humaneval\qwen3.6-35b-iq3xxs_openai_temp_0.0.jsonl,0.926829268292683,0.926829268292683,0.926829268292683
+qwen3.6-35b-iq3xxs,humaneval,0.926829268292683,0.3,C:\Users\droha\Workspace\SaltyChart-Claude\bench\local\..\evalplus_results\humaneval\qwen3.6-35b-iq3xxs_openai_temp_0.0.jsonl,0.926829268292683,0.926829268292683,0.926829268292683
+qwen3.6-35b-iq3xxs,humaneval,0.926829268292683,0.5,C:\Users\droha\Workspace\SaltyChart-Claude\bench\local\..\evalplus_results\humaneval\qwen3.6-35b-iq3xxs_openai_temp_0.0.jsonl,0.926829268292683,0.926829268292683,0.926829268292683
+qwen3.6-35b-iq3xxs,humaneval,0.926829268292683,0.3,C:\Users\droha\Workspace\SaltyChart-Claude\bench\local\..\evalplus_results\humaneval\qwen3.6-35b-iq3xxs_openai_temp_0.0.jsonl,0.926829268292683,0.926829268292683,0.926829268292683
+qwen3.6-35b-iq3xxs,humaneval,0.926829268292683,0.3,C:\Users\droha\Workspace\SaltyChart-Claude\bench\local\..\evalplus_results\humaneval\qwen3.6-35b-iq3xxs_openai_temp_0.0.jsonl,0.926829268292683,0.926829268292683,0.926829268292683
+qwen3.6-35b-iq3xxs,humaneval,0.926829268292683,0.3,C:\Users\droha\Workspace\SaltyChart-Claude\bench\local\..\evalplus_results\humaneval\qwen3.6-35b-iq3xxs_openai_temp_0.0.jsonl,0.926829268292683,0.926829268292683,0.926829268292683
+qwen3.6-35b-iq3xxs,humaneval,0.926829268292683,0.3,C:\Users\droha\Workspace\SaltyChart-Claude\bench\local\..\evalplus_results\humaneval\qwen3.6-35b-iq3xxs_openai_temp_0.0.jsonl,0.926829268292683,0.926829268292683,0.926829268292683

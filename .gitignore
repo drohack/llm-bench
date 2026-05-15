@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+local/logs/*.log
+local/logs/*.log.old
+nvidia/logs/*.log
+local/evalplus_results/**/*.jsonl
+local/evalplus_results/**/*.raw.jsonl
