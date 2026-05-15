@@ -20,6 +20,13 @@ import sys
 import tempfile
 import time
 from pathlib import Path
+import os
+from pathlib import Path
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).parent.parent / ".env")
+except ImportError:
+    pass
 
 # Patch Unix-only signal APIs before any evalplus import, so multiprocess
 # doesn't crash when iterating signal names during module load on Windows.
@@ -37,7 +44,7 @@ if not hasattr(signal, 'SIGALRM'):
 HERE        = Path(__file__).parent
 RESULTS_DIR = HERE / "local" / "results"
 NVIDIA_BASE = "https://integrate.api.nvidia.com/v1"
-NVIDIA_KEY  = "your-nvidia-api-key"
+NVIDIA_KEY  = os.environ.get("NVIDIA_API_KEY", "your-nvidia-api-key")
 PYTHON      = sys.executable
 
 

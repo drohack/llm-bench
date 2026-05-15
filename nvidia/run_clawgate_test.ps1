@@ -7,7 +7,7 @@ $python  = Join-Path $PSScriptRoot "..\.venv\Scripts\python.exe"
 $script  = Join-Path $PSScriptRoot "..\shared\test_clawgate_tools.py"
 $logOut  = Join-Path $PSScriptRoot "logs\clawgate.log"
 $logErr  = Join-Path $PSScriptRoot "logs\clawgate.log.err"
-$apiKey  = "your-nvidia-api-key"
+$apiKey  = if ($env:NVIDIA_API_KEY) { $env:NVIDIA_API_KEY } else { "your-nvidia-api-key" }
 $baseUrl = "https://integrate.api.nvidia.com/v1"
 $port    = 8082
 

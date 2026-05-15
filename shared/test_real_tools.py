@@ -12,13 +12,20 @@ import json
 import os
 import time
 from dataclasses import dataclass, asdict
+import os
+from pathlib import Path
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).parent.parent / ".env")
+except ImportError:
+    pass
 
 import httpx
 
 PROVIDERS = {
     "nvidia": {
         "base_url": "https://integrate.api.nvidia.com/v1",
-        "api_key": "your-nvidia-api-key",
+        "api_key": os.environ.get("NVIDIA_API_KEY", "your-nvidia-api-key"),
         "models": [
             "deepseek-ai/deepseek-v4-pro",
             "z-ai/glm-5.1",

@@ -18,11 +18,18 @@ import sys
 import tempfile
 import time
 from dataclasses import dataclass, asdict
+import os
+from pathlib import Path
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).parent.parent / ".env")
+except ImportError:
+    pass
 
 from openai import OpenAI
 
 NVIDIA_BASE = "https://integrate.api.nvidia.com/v1"
-NVIDIA_KEY  = "your-nvidia-api-key"
+NVIDIA_KEY  = os.environ.get("NVIDIA_API_KEY", "your-nvidia-api-key")
 
 PROBLEMS = [
     {
